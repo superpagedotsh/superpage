@@ -13,7 +13,7 @@
 
 **SURGE × OpenClaw Hackathon — February 2026**
 
-[Live Demo](https://superpa.ge) · [Telegram Bot](https://t.me/HeySuperioBot) · [Documentation](#documentation)
+[Live Demo](https://superpage.sh) · [Telegram Bot](https://t.me/Comingsoon) · [Documentation](#documentation)
 
 </div>
 
@@ -247,7 +247,7 @@ superpage/
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/AIProjects402/superpage.git
+git clone https://github.com/superpagedotsh/superpage.git
 cd superpage
 pnpm install
 ```
@@ -575,9 +575,9 @@ SuperPage is an **x402-integrated OpenClaw skill** that charges USDC fees per re
 
 | Resource | URL |
 |----------|-----|
-| **Live Demo** | [superpa.ge](https://superpa.ge) |
-| **Telegram Bot** | [@HeySuperioBot](https://t.me/HeySuperioBot) |
-| **GitHub** | [AIProjects402/superpage](https://github.com/AIProjects402/superpage) |
+| **Live Demo** | [superpa.ge](https://superpage.sh) |
+| **Telegram Bot** | [@HeySuperioBot](https://t.me/Comingsoon) |
+| **GitHub** | [superpagedotsh/superpage](https://github.com/superpagedotsh/superpage)) |
 | **x402 Protocol** | [x402.org](https://x402.org) |
 | **OpenClaw** | [openclaw.ai](https://openclaw.ai) |
 | **MCP Docs** | [modelcontextprotocol.io](https://modelcontextprotocol.io) |
