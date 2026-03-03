@@ -1,0 +1,382 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-display: var(--font-display);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* SuperPage brand colors from logo */
+  --color-sp-pink: #E8A0BF;
+  --color-sp-blue: #5B8FB9;
+  --color-sp-gold: #E5BA73;
+  --color-sp-cream: #D4C5A9;
+  --color-sp-coral: #E07A8F;
+}
+
+:root {
+  --radius: 0.625rem;
+
+  /* SuperPage light theme — warm creative palette */
+  --background: #FDFBF7;
+  --foreground: #1a1a2e;
+  --card: #ffffff;
+  --card-foreground: #1a1a2e;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a2e;
+  --primary: #5B8FB9;
+  --primary-foreground: #ffffff;
+  --secondary: #FDF6EE;
+  --secondary-foreground: #3d2e1e;
+  --muted: #f5f0ea;
+  --muted-foreground: #7a7586;
+  --accent: #FDF6EE;
+  --accent-foreground: #3d2e1e;
+  --destructive: #ef4444;
+  --border: #e8e0d4;
+  --input: #e8e0d4;
+  --ring: #5B8FB9;
+
+  /* Chart colors */
+  --chart-1: #5B8FB9;
+  --chart-2: #E8A0BF;
+  --chart-3: #E5BA73;
+  --chart-4: #E07A8F;
+  --chart-5: #D4C5A9;
+
+  /* Sidebar */
+  --sidebar: #FDFBF7;
+  --sidebar-foreground: #1a1a2e;
+  --sidebar-primary: #5B8FB9;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #FDF6EE;
+  --sidebar-accent-foreground: #3d2e1e;
+  --sidebar-border: #e8e0d4;
+  --sidebar-ring: #5B8FB9;
+}
+
+.dark {
+  /* Surfaces — warm dark tones */
+  --background: #0f0e13;
+  --foreground: #f0ece6;
+  --card: #18171e;
+  --card-foreground: #f0ece6;
+  --popover: #1c1b23;
+  --popover-foreground: #f0ece6;
+
+  /* Blue accent — vibrant for dark mode */
+  --primary: #7CB4D8;
+  --primary-foreground: #0f0e13;
+  --secondary: #1c1a22;
+  --secondary-foreground: #D4C5A9;
+  --muted: #1c1b23;
+  --muted-foreground: #9a95a6;
+  --accent: #1c1a22;
+  --accent-foreground: #D4C5A9;
+  --destructive: #f87171;
+  --border: #2a2833;
+  --input: #221f2b;
+  --ring: #7CB4D8;
+
+  /* Chart colors */
+  --chart-1: #7CB4D8;
+  --chart-2: #E8A0BF;
+  --chart-3: #E5BA73;
+  --chart-4: #E07A8F;
+  --chart-5: #D4C5A9;
+
+  /* Sidebar */
+  --sidebar: #131218;
+  --sidebar-foreground: #f0ece6;
+  --sidebar-primary: #7CB4D8;
+  --sidebar-primary-foreground: #0f0e13;
+  --sidebar-accent: #201e28;
+  --sidebar-accent-foreground: #D4C5A9;
+  --sidebar-border: #2a2833;
+  --sidebar-ring: #7CB4D8;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(1deg); }
+  66% { transform: translateY(-6px) rotate(-1deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-rotate {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes coin-float-1 {
+  0%, 100% { transform: translateY(0) rotate(-12deg); }
+  50% { transform: translateY(-18px) rotate(-6deg); }
+}
+
+@keyframes coin-float-2 {
+  0%, 100% { transform: translateY(0) rotate(15deg); }
+  50% { transform: translateY(-14px) rotate(8deg); }
+}
+
+@keyframes coin-float-3 {
+  0%, 100% { transform: translateY(0) rotate(-20deg); }
+  50% { transform: translateY(-22px) rotate(-12deg); }
+}
+
+@keyframes coin-float-4 {
+  0%, 100% { transform: translateY(0) rotate(8deg); }
+  50% { transform: translateY(-16px) rotate(18deg); }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-out-right {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #5B8FB9, #E8A0BF, #E5BA73);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-alt {
+  background: linear-gradient(135deg, #E8A0BF, #E5BA73, #5B8FB9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shimmer button */
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #5B8FB9, #7CB4D8, #5B8FB9);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+  transition: all 0.3s ease;
+}
+
+.shimmer-btn:hover {
+  box-shadow: 0 0 30px rgba(91, 143, 185, 0.4), 0 0 60px rgba(91, 143, 185, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Glow border on hover */
+.glow-border {
+  transition: all 0.4s ease;
+}
+
+.glow-border:hover {
+  border-color: rgba(91, 143, 185, 0.4);
+  box-shadow: 0 0 20px rgba(91, 143, 185, 0.1), inset 0 0 20px rgba(91, 143, 185, 0.03);
+}
+
+/* Float animation */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+/* Fade in up animation */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up-1 { animation-delay: 0.1s; }
+.animate-fade-in-up-2 { animation-delay: 0.2s; }
+.animate-fade-in-up-3 { animation-delay: 0.3s; }
+.animate-fade-in-up-4 { animation-delay: 0.4s; }
+.animate-fade-in-up-5 { animation-delay: 0.5s; }
+
+/* Flying coins — smooth GPU-accelerated */
+.coin-float-1 { animation: coin-float-1 7s cubic-bezier(0.45, 0, 0.55, 1) infinite; will-change: transform; }
+.coin-float-2 { animation: coin-float-2 8s cubic-bezier(0.45, 0, 0.55, 1) infinite 1s; will-change: transform; }
+.coin-float-3 { animation: coin-float-3 9s cubic-bezier(0.45, 0, 0.55, 1) infinite 2s; will-change: transform; }
+.coin-float-4 { animation: coin-float-4 7.5s cubic-bezier(0.45, 0, 0.55, 1) infinite 0.5s; will-change: transform; }
+
+/* Marquee */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Mobile menu animations */
+.slide-in-right {
+  animation: slide-in-right 0.3s ease-out forwards;
+}
+
+.slide-out-right {
+  animation: slide-out-right 0.3s ease-in forwards;
+}
+
+/* Material Symbols */
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+.material-symbols-outlined.fill-1 {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+/* Hide scrollbar utility */
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Code block styles */
+pre {
+  background: var(--secondary);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  color: var(--secondary-foreground);
+  font-family: monospace;
+  overflow-x: auto;
+}
+
+code {
+  color: var(--primary);
+  font-weight: 500;
+}

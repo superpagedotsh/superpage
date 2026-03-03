@@ -1,0 +1,43 @@
+# Dependencies
+node_modules
+**/node_modules
+
+# Build outputs
+dist
+.next
+
+# Git
+.git
+.gitignore
+
+# Environment files
+.env
+.env.*
+!.env.production.example
+
+# Packages not needed for deployment
+packages/ai-agent
+packages/contracts
+packages/mcp-client
+
+# Test files
+**/*.test.ts
+**/__tests__
+**/test-*.ts
+**/buy-product-eth.ts
+
+# IDE / OS
+.vscode
+.idea
+.DS_Store
+*.swp
+*.swo
+
+# Docker
+docker-compose.yml
+Dockerfile
+deploy.sh
+
+# Docs
+*.md
+LICENSE
