@@ -99,12 +99,14 @@ const generalLimiter = rateLimit({
   max: 300, // 300 requests per window
   standardHeaders: true,
   legacyHeaders: false,
+  validate: { xForwardedForHeader: false },
 });
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 30, // stricter for auth endpoints
   standardHeaders: true,
   legacyHeaders: false,
+  validate: { xForwardedForHeader: false },
 });
 app.use(generalLimiter);
 

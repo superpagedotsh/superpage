@@ -221,7 +221,7 @@ export class X402Server {
         }
 
         // Attach payment info to request
-        req.payment = {
+        (req as any).payment = {
           proof: proof as any,
           verified: true,
           amount: options.amount,

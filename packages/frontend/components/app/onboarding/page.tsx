@@ -173,7 +173,7 @@ export default function OnboardingPage() {
                 )}
               </div>
               <p className="text-xs text-muted-foreground">
-                Your public profile will be at: superpa.ge/@{username || "yourname"}
+                Your public profile will be at: superpage.sh/@{username || "yourname"}
               </p>
               {isAvailable === false && (
                 <p className="text-xs text-red-400 flex items-center gap-1">
