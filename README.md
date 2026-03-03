@@ -576,7 +576,7 @@ SuperPage is an **x402-integrated OpenClaw skill** that charges USDC fees per re
 | Resource | URL |
 |----------|-----|
 | **Live Demo** | [superpa.ge](https://superpage.sh) |
-| **Telegram Bot** | [@HeySuperioBot](https://t.me/Comingsoon) |
+| **Telegram Bot** | [@Comingsoon](https://t.me/Comingsoon) |
 | **GitHub** | [superpagedotsh/superpage](https://github.com/superpagedotsh/superpage)) |
 | **x402 Protocol** | [x402.org](https://x402.org) |
 | **OpenClaw** | [openclaw.ai](https://openclaw.ai) |
